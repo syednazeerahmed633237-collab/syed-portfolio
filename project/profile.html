@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Syed Nazeer Ahmed | Junior PHP Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --accent-blue: #3b82f6;
+            --accent-purple: #a855f7;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-dark); 
+            color: #f9f9f9; 
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Bento Card Styling */
+        .bento-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bento-card:hover {
+            border-color: rgba(59, 130, 246, 0.4);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #444;
+        }
+
+        /* Animation States */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Floating Animation for Hero */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .float-anim {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="selection:bg-blue-500/30">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 border-b border-white/10 bg-black/60 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center font-bold">S</div>
+                <span class="text-xl font-bold tracking-tighter">SYED NAZEER AHMED<span class="text-blue-500"> . </span>SNA</span>
+            </div>
+            
+            <div class="hidden md:flex gap-10 text-sm font-medium text-gray-400">
+                <a href="#home" class="hover:text-white transition-colors relative group">
+                    Home
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#skills" class="hover:text-white transition-colors relative group">
+                    Languages & Skills
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#experience" class="hover:text-white transition-colors relative group">
+                    Experience
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#contact" class="hover:text-white transition-colors relative group">
+                    Contact
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full"></span>
+                </a>
+            </div>
+       <a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=syednazeerahmed633237@gmail.com&su=Hello%20Syed%20%E2%80%93%20Let%E2%80%99s%20Connect"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="hidden sm:block bg-white text-black px-6 py-2.5 rounded-full text-sm font-bold hover:bg-blue-500 hover:text-white transition-all transform hover:scale-105 active:scale-95"
+>
+  Let's Talk
+</a>
+
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 pt-32 pb-20">
+        
+        <!-- Hero Section -->
+        <section id="home" class="mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <!-- Large Intro Card -->
+                <div class="md:col-span-8 bento-card p-12 md:p-16 flex flex-col justify-center reveal">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-8 w-fit">
+                        <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                        Available for new projects
+                    </div>
+                    <h1 class="text-5xl md:text-8xl font-bold leading-[1.1] mb-8 tracking-tight">
+                        SYED <span class="gradient-text">NAZEER</span> AHMED
+                    </h1>
+                    <!-- <p class="text-gray-400 text-xl max-w-2xl leading-relaxed mb-10">
+                        I'm SYED, a Product Designer & Developer focused on creating functional, high-end interfaces that bridge the gap between users and technology.
+                    </p> -->
+                    <p class="text-gray-400 text-xl max-w-2xl leading-relaxed mb-10">
+                        I'm SYED, Junior PHP Developer with experience in PHP, HTML, CSS, JavaScript, and SQL. 
+                        Skilled in MySQL, Git, and VS Code. Passionate about learning new technologies 
+                        and delivering efficient, scalable solutions.
+                    </p>
+                    <div class="flex flex-wrap gap-6">
+                        <div class="flex items-center gap-3 text-gray-400 hover:text-white transition-colors cursor-pointer group">
+                            <i data-lucide="github" class="w-6 h-6 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-sm font-medium">GitHub</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-gray-400 hover:text-white transition-colors cursor-pointer group">
+                            <i data-lucide="linkedin" class="w-6 h-6 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-sm font-medium">LinkedIn</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-gray-400 hover:text-white transition-colors cursor-pointer group">
+                            <i data-lucide="dribbble" class="w-6 h-6 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-sm font-medium">Dribbble</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Card -->
+                <div class="md:col-span-4 bento-card p-8 flex flex-col items-center justify-center text-center reveal">
+                    <div class="relative mb-8 group">
+                        <div class="absolute inset-0 bg-blue-500 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+
+                        <div class="w-40 h-40 rounded-3xl bg-neutral-800 border-2 border-white/10 overflow-hidden relative z-10 float-anim">
+                            <img 
+                                src="images/246071186.png"
+                                alt="Syed Nazeer Ahmed"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            >
+                        </div>
+                    </div>
+
+                    <h2 class="text-2xl font-bold mb-1">Syed Nazeer Ahmed</h2>
+                    <p class="text-blue-500 font-medium text-sm mb-8">Junior PHP Developer</p>
+                    
+                   <div class="w-full text-left space-y-6">
+
+                    <!-- About -->
+                    <div>
+                        <h3 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">
+                            About Me
+                        </h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Junior PHP Developer with hands-on experience in building admin panels, 
+                            dashboards, and business-driven web applications. I focus on clean 
+                            backend logic, performance, and maintainable code.
+                        </p>
+                    </div>
+
+                    <!-- Background -->
+                    <div>
+                        <h3 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">
+                            Background
+                        </h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Experience working with MVC architectures, database-driven systems, 
+                            and real-world production applications. Comfortable collaborating 
+                            with designers, testers, and stakeholders.
+                        </p>
+                    </div>
+
+                    <!-- Tech Stack -->
+                    <div>
+                        <h3 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3">
+                            Technologies I Use
+                        </h3>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs font-medium rounded-full bg-white/5 border border-white/10">PHP</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-full bg-white/5 border border-white/10">CodeIgniter</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-full bg-white/5 border border-white/10">MySQL</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-full bg-white/5 border border-white/10">HTML</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-full bg-white/5 border border-white/10">CSS</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-full bg-white/5 border border-white/10">JavaScript</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-full bg-white/5 border border-white/10">Git</span>
+                            <span class="px-3 py-1 text-xs font-medium rounded-full bg-white/5 border border-white/10">VS Code</span>
+                        </div>
+                    </div>
+
+                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="mb-20">
+        <div class="bento-card p-12 md:p-16">
+            <h3 class="text-3xl font-bold mb-6">Current Experience</h3>
+
+            <p class="text-gray-400 text-lg leading-relaxed mb-4">
+                I am currently working as a Junior PHP Developer at 
+                <strong>NowApps Technologies</strong> on a live production project 
+                called <strong>ChannelKonnect</strong>.
+            </p>
+
+            <p class="text-gray-400 text-lg leading-relaxed mb-4">
+                My role involves handling both frontend and backend development using 
+                PHP, HTML, CSS, and JavaScript. I work on building and maintaining 
+                admin panels, forms, validations, and database-driven features.
+            </p>
+
+            <p class="text-gray-400 text-lg leading-relaxed">
+                For the mobile application, I contribute by developing backend APIs 
+                that support mobile functionality and data integration.
+            </p>
+        </div>
+    </section>
+
+        <!-- Projects Grid -->
+        <section id="skills" class="mb-20">
+            <div class="flex justify-between items-end mb-12 reveal">
+                <div>
+                    <h3 class="text-4xl font-bold mb-2">Languages & Skills</h3>
+                    <p class="text-gray-500">
+                        Programming languages and technologies I work with.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- PHP -->
+                <div class="bento-card p-10 reveal">
+                    <h4 class="text-xl font-bold mb-3">PHP</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Writing clean PHP code for backend logic, form handling, 
+                        validations, and basic CRUD operations.
+                    </p>
+                </div>
+
+                <!-- MySQL -->
+                <div class="bento-card p-10 reveal">
+                    <h4 class="text-xl font-bold mb-3">MySQL</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Creating and managing databases, writing SQL queries, 
+                        and maintaining data integrity.
+                    </p>
+                </div>
+
+                <!-- HTML -->
+                <div class="bento-card p-10 reveal">
+                    <h4 class="text-xl font-bold mb-3">HTML</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Building structured and semantic web pages 
+                        that integrate smoothly with backend systems.
+                    </p>
+                </div>
+
+                <!-- CSS -->
+                <div class="bento-card p-10 reveal">
+                    <h4 class="text-xl font-bold mb-3">CSS</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Styling responsive layouts using modern CSS 
+                        and utility frameworks like Tailwind CSS.
+                    </p>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="bento-card p-10 reveal">
+                    <h4 class="text-xl font-bold mb-3">JavaScript</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Adding interactivity, form validations, 
+                        and basic dynamic behavior to web applications.
+                    </p>
+                </div>
+
+                <!-- Tools -->
+                <div class="bento-card p-10 reveal">
+                    <h4 class="text-xl font-bold mb-3">Tools & Others</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Using Git for version control, VS Code for development, 
+                        and learning MVC concepts with frameworks like CodeIgniter.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+       <!-- Testimonial -->
+        <section class="mb-20 reveal">
+            <div class="bento-card p-12 md:p-20 relative">
+                <i data-lucide="quote" class="absolute top-10 right-10 w-20 h-20 text-white/5 pointer-events-none"></i>
+
+                <div class="max-w-3xl">
+                    <p class="text-2xl md:text-3xl font-medium leading-snug mb-10 text-gray-200">
+                        "Syed is a motivated junior PHP developer who writes clean code, 
+                            learns quickly, and shows strong dedication to improving his backend 
+                            and database skills."
+                    </p>
+
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center font-bold text-black">
+                            C
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-lg">Client Feedback</h5>
+                            <p class="text-gray-500 text-sm uppercase tracking-widest">
+                                PHP • Backend • Web Applications
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+<section id="contact" class="reveal">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Left: Contact Info -->
+        <div class="bento-card p-12 bg-blue-600 text-white border-none overflow-hidden">
+            <div class="relative z-10">
+                <h3 class="text-4xl font-bold mb-6">Let’s Connect</h3>
+                <p class="text-blue-100 text-lg mb-12">
+                   I’m a Junior PHP Developer and open to new opportunities. Happy to connect.
+                </p>
+                
+                <div class="space-y-6">
+
+                    <!-- Email -->
+                    <a 
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=syednazeerahmed633237@gmail.com&su=Hello%20Syed%20%E2%80%93%20Let%E2%80%99s%20Connect"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex items-center gap-4 group"
+                    >
+                        <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-blue-600 transition-all">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-xl font-medium underline underline-offset-8 decoration-white/30">
+                            syednazeerahmed633237@gmail.com
+                        </span>
+                    </a>
+
+                    <!-- Location -->
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-xl font-medium">India — Remote / Onsite</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Decorative Circle -->
+            <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <!-- Right: Contact Form (Gmail Open) -->
+        <div class="bento-card p-12">
+            <form id="contactForm" class="space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase text-gray-500 tracking-widest">Full Name</label>
+                        <input name="name" type="text" required class="w-full bg-white/5 border border-white/10 rounded-xl p-4 focus:outline-none focus:border-blue-500 transition-all" placeholder="Your name">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase text-gray-500 tracking-widest">Email Address</label>
+                        <input name="email" type="email" required class="w-full bg-white/5 border border-white/10 rounded-xl p-4 focus:outline-none focus:border-blue-500 transition-all" placeholder="your@email.com">
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-xs font-bold uppercase text-gray-500 tracking-widest">Your Message</label>
+                    <textarea name="message" rows="4" required class="w-full bg-white/5 border border-white/10 rounded-xl p-4 focus:outline-none focus:border-blue-500 transition-all" placeholder="Write your message here..."></textarea>
+                </div>
+                <button class="w-full bg-white text-black py-5 rounded-xl font-bold hover:bg-blue-500 hover:text-white transition-all transform hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-3">
+                    Send Message <i data-lucide="send" class="w-5 h-5"></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+
+    </main>
+
+    <footer class="py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2 grayscale opacity-50">
+                <div class="w-6 h-6 bg-white rounded flex items-center justify-center font-bold text-[10px] text-black">A</div>
+                <span class="text-sm font-bold tracking-tighter">SYED NAZEER AHMED</span>
+            </div>
+            <p class="text-gray-600 text-xs font-medium uppercase tracking-widest">&copy; 2026 Crafted with precision</p>
+            <div class="flex gap-8">
+<a href="privacy.html" class="text-xs font-bold text-gray-500 hover:text-white transition-colors uppercase tracking-widest">
+    Privacy
+</a>
+<a href="terms.html" class="text-xs font-bold text-gray-500 hover:text-white transition-colors uppercase tracking-widest">
+    Terms
+</a>
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Scroll Reveal Logic
+        const reveal = () => {
+            const reveals = document.querySelectorAll('.reveal');
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        };
+
+        window.addEventListener('scroll', reveal);
+        // Trigger once on load
+        window.addEventListener('load', reveal);
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-0', 'bg-black/80');
+                nav.classList.remove('bg-black/60');
+            } else {
+                nav.classList.remove('py-0', 'bg-black/80');
+                nav.classList.add('bg-black/60');
+            }
+        });
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const name = this.name.value;
+    const email = this.email.value;
+    const message = this.message.value;
+
+    window.open(
+        `https://mail.google.com/mail/?view=cm&fs=1&to=syednazeerahmed633237@gmail.com&su=Hello%20Syed%20%E2%80%93%20Let%E2%80%99s%20Connect&body=Name:%20${name}%0AEmail:%20${email}%0A%0AMessage:%0A${message}`,
+        "_blank"
+    );
+});     
+
+    </script>
+</body>
+</html>
